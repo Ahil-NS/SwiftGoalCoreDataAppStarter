@@ -15,7 +15,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var longTermButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    private var goalType: GoalType = .longTerm {
+    private var goalType: GoalType = .shortTerm {
         didSet {
             if(goalType == .longTerm){
                 longTermButton.setSelectedColor()
