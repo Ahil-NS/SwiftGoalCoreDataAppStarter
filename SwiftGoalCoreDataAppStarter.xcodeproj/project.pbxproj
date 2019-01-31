@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		FA018EA52200C6D3002AFF2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA018EA42200C6D3002AFF2C /* AppDelegate.swift */; };
-		FA018EA72200C6D3002AFF2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA018EA62200C6D3002AFF2C /* ViewController.swift */; };
+		FA018EA72200C6D3002AFF2C /* GoalMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA018EA62200C6D3002AFF2C /* GoalMainVC.swift */; };
 		FA018EAA2200C6D3002AFF2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA018EA82200C6D3002AFF2C /* Main.storyboard */; };
 		FA018EAC2200C6DA002AFF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA018EAB2200C6DA002AFF2C /* Assets.xcassets */; };
 		FA018EAF2200C6DA002AFF2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA018EAD2200C6DA002AFF2C /* LaunchScreen.storyboard */; };
+		FACD04A522034439005F39CE /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04A422034439005F39CE /* GoalCell.swift */; };
+		FACD04A722034FA0005F39CE /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04A622034FA0005F39CE /* GoalType.swift */; };
+		FACD04AA22035250005F39CE /* goal_set.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FACD04A822035250005F39CE /* goal_set.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA018EA12200C6D3002AFF2C /* SwiftGoalCoreDataAppStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGoalCoreDataAppStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA018EA42200C6D3002AFF2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA018EA62200C6D3002AFF2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA018EA62200C6D3002AFF2C /* GoalMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainVC.swift; sourceTree = "<group>"; };
 		FA018EA92200C6D3002AFF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA018EAB2200C6DA002AFF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA018EAE2200C6DA002AFF2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA018EB02200C6DA002AFF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACD04A422034439005F39CE /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		FACD04A622034FA0005F39CE /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
+		FACD04A922035250005F39CE /* goal_set.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = goal_set.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		FA018EA32200C6D3002AFF2C /* SwiftGoalCoreDataAppStarter */ = {
 			isa = PBXGroup;
 			children = (
+				FACD04A3220340B2005F39CE /* View */,
+				FACD04A2220340A7005F39CE /* Controllers */,
+				FACD04A02203408E005F39CE /* Enums */,
+				FACD049F22034078005F39CE /* Extensions */,
 				FA018EA42200C6D3002AFF2C /* AppDelegate.swift */,
-				FA018EA62200C6D3002AFF2C /* ViewController.swift */,
 				FA018EA82200C6D3002AFF2C /* Main.storyboard */,
 				FA018EAB2200C6DA002AFF2C /* Assets.xcassets */,
 				FA018EAD2200C6DA002AFF2C /* LaunchScreen.storyboard */,
 				FA018EB02200C6DA002AFF2C /* Info.plist */,
+				FACD04A822035250005F39CE /* goal_set.xcdatamodeld */,
 			);
 			path = SwiftGoalCoreDataAppStarter;
+			sourceTree = "<group>";
+		};
+		FACD049F22034078005F39CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FACD04A02203408E005F39CE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FACD04A622034FA0005F39CE /* GoalType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		FACD04A2220340A7005F39CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA018EA62200C6D3002AFF2C /* GoalMainVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FACD04A3220340B2005F39CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FACD04A422034439005F39CE /* GoalCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA018EA72200C6D3002AFF2C /* ViewController.swift in Sources */,
+				FA018EA72200C6D3002AFF2C /* GoalMainVC.swift in Sources */,
+				FACD04AA22035250005F39CE /* goal_set.xcdatamodeld in Sources */,
 				FA018EA52200C6D3002AFF2C /* AppDelegate.swift in Sources */,
+				FACD04A722034FA0005F39CE /* GoalType.swift in Sources */,
+				FACD04A522034439005F39CE /* GoalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FACD04A822035250005F39CE /* goal_set.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FACD04A922035250005F39CE /* goal_set.xcdatamodel */,
+			);
+			currentVersion = FACD04A922035250005F39CE /* goal_set.xcdatamodel */;
+			path = goal_set.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA018E992200C6D2002AFF2C /* Project object */;
 }
