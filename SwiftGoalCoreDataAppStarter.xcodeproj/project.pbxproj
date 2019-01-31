@@ -19,6 +19,7 @@
 		FACD04AE22035B8C005F39CE /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04AD22035B8C005F39CE /* UIViewControllerExt.swift */; };
 		FACD04B022035DFE005F39CE /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04AF22035DFE005F39CE /* UIViewExt.swift */; };
 		FACD04B222035EE6005F39CE /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04B122035EE6005F39CE /* UIButtonExt.swift */; };
+		FACD04B422037DA3005F39CE /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD04B322037DA3005F39CE /* FinishGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FACD04AD22035B8C005F39CE /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		FACD04AF22035DFE005F39CE /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		FACD04B122035EE6005F39CE /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		FACD04B322037DA3005F39CE /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				FA018EA62200C6D3002AFF2C /* GoalMainVC.swift */,
 				FACD04AB2203593E005F39CE /* CreateGoalVC.swift */,
+				FACD04B322037DA3005F39CE /* FinishGoalVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				FACD04A722034FA0005F39CE /* GoalType.swift in Sources */,
 				FACD04AE22035B8C005F39CE /* UIViewControllerExt.swift in Sources */,
 				FACD04B222035EE6005F39CE /* UIButtonExt.swift in Sources */,
+				FACD04B422037DA3005F39CE /* FinishGoalVC.swift in Sources */,
 				FACD04A522034439005F39CE /* GoalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
