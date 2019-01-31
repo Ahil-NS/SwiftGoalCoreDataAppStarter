@@ -14,6 +14,7 @@ class GoalMainVC: UIViewController {
     
      var goals: [Goal] = []
     
+    @IBOutlet var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,14 @@ class GoalMainVC: UIViewController {
             if complete {
                 if goals.count >= 1 {
                     tableView.isHidden = false
+                    homeView.isHidden = true
+                   
                 } else {
                     tableView.isHidden = true
+                    homeView.isHidden = false
+                    view.addSubview(homeView)
+                    homeView.center = view.center
+                    
                 }
             }
         }
@@ -70,9 +77,16 @@ extension GoalMainVC: UITableViewDelegate, UITableViewDataSource{
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-    
+        
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        return [deleteAction]
+        addAction.backgroundColor = #colorLiteral(red: 0.961445272, green: 0.650790751, blue: 0.1328578591, alpha: 1)
+        
+        return [deleteAction, addAction]
     }
     
     
@@ -105,6 +119,25 @@ extension GoalMainVC {
             print("Successfully removed goal!")
         } catch {
             debugPrint("Could not remove: \(error.localizedDescription)")
+        }
+    }
+    
+    func setProgress(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let chosenGoal = goals[indexPath.row]
+        
+        if chosenGoal.goalProgress < chosenGoal.goalCompleteValue {
+            chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        } else {
+            return
+        }
+        
+        do {
+            try managedContext.save()
+            print("Successfully set progress!")
+        } catch {
+            debugPrint("Could not set progress: \(error.localizedDescription)")
         }
     }
     
