@@ -14,6 +14,10 @@ class GoalMainVC: UIViewController {
         super.viewDidLoad()
         
     }
+    @IBAction func AddGoalButtonTapped(_ sender: Any) {
+        guard let addVC = storyboard?.instantiateViewController(withIdentifier: "createGoalVC") as? CreateGoalVC else{return}
+        presentDetail(addVC)
+    }
 }
 
 extension GoalMainVC: UITableViewDelegate, UITableViewDataSource{

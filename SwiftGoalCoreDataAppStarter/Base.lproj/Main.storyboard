@@ -112,7 +112,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Goal Set" id="q5W-3E-3ma">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kok-jP-WRj"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kok-jP-WRj">
+                            <connections>
+                                <action selector="AddGoalButtonTapped:" destination="BYZ-38-t0r" id="3OG-gZ-TXx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,6 +151,124 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Create GoalVC-->
+        <scene sceneID="761-23-MDT">
+            <objects>
+                <viewController storyboardIdentifier="createGoalVC" id="H6f-WD-IkI" customClass="CreateGoalVC" customModule="SwiftGoalCoreDataAppStarter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ikA-b6-Ewf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMg-IT-8c3">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cU7-Qd-L9D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="H6f-WD-IkI" eventType="touchUpInside" id="Ino-K4-rUU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ey-mw-ekT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q05-fj-H5D">
+                                        <rect key="frame" x="155" y="30" width="65" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOt-AD-ddb">
+                                        <rect key="frame" x="14" y="25" width="34" height="30"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="H6f-WD-IkI" eventType="touchUpInside" id="CfW-A3-lzJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1704764148" green="0.3243227923" blue="0.18478453240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nOt-AD-ddb" firstAttribute="centerY" secondItem="2ey-mw-ekT" secondAttribute="centerY" id="4zj-E0-6Nt"/>
+                                    <constraint firstItem="Q05-fj-H5D" firstAttribute="centerY" secondItem="2ey-mw-ekT" secondAttribute="centerY" id="PFw-83-rr6"/>
+                                    <constraint firstItem="Q05-fj-H5D" firstAttribute="centerX" secondItem="2ey-mw-ekT" secondAttribute="centerX" id="UcX-v5-GtJ"/>
+                                    <constraint firstItem="nOt-AD-ddb" firstAttribute="leading" secondItem="2ey-mw-ekT" secondAttribute="leading" constant="14" id="ltw-6H-SiO"/>
+                                    <constraint firstAttribute="height" constant="80" id="n5c-9f-gru"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lgN-Gk-HcH">
+                                <rect key="frame" x="20" y="120" width="335" height="257"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What is you Goal?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="whi-0Z-hZa">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="187"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.48127140410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rPF-1M-E7M">
+                                        <rect key="frame" x="0.0" y="207" width="335" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSk-g6-3HL">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Suj-0N-HEy"/>
+                                                </constraints>
+                                                <state key="normal" title="SHORT TERM">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shortTermButtonTapped:" destination="H6f-WD-IkI" eventType="touchUpInside" id="8NT-YH-455"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tC-Fi-5RV">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="LONG TERM">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="longTermButtonTapped:" destination="H6f-WD-IkI" eventType="touchUpInside" id="uft-wb-wzG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="tXP-mC-vFa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMg-IT-8c3" firstAttribute="trailing" secondItem="wpc-xm-Dl5" secondAttribute="trailing" id="4fy-1e-wKW"/>
+                            <constraint firstItem="dMg-IT-8c3" firstAttribute="leading" secondItem="wpc-xm-Dl5" secondAttribute="leading" id="B64-Mp-KYz"/>
+                            <constraint firstItem="dMg-IT-8c3" firstAttribute="bottom" secondItem="wpc-xm-Dl5" secondAttribute="bottom" id="Grf-X7-zUH"/>
+                            <constraint firstItem="2ey-mw-ekT" firstAttribute="top" secondItem="ikA-b6-Ewf" secondAttribute="top" id="JaO-h8-FYa"/>
+                            <constraint firstItem="2ey-mw-ekT" firstAttribute="leading" secondItem="wpc-xm-Dl5" secondAttribute="leading" id="OPM-PI-VTy"/>
+                            <constraint firstItem="wpc-xm-Dl5" firstAttribute="trailing" secondItem="lgN-Gk-HcH" secondAttribute="trailing" constant="20" id="R54-40-On2"/>
+                            <constraint firstItem="2ey-mw-ekT" firstAttribute="trailing" secondItem="wpc-xm-Dl5" secondAttribute="trailing" id="chy-Ni-qWq"/>
+                            <constraint firstItem="lgN-Gk-HcH" firstAttribute="leading" secondItem="wpc-xm-Dl5" secondAttribute="leading" constant="20" id="eCN-EA-fEf"/>
+                            <constraint firstItem="lgN-Gk-HcH" firstAttribute="top" secondItem="2ey-mw-ekT" secondAttribute="bottom" constant="40" id="wqG-oB-04a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wpc-xm-Dl5"/>
+                    </view>
+                    <connections>
+                        <outlet property="goalTextView" destination="whi-0Z-hZa" id="8x8-Ao-bhe"/>
+                        <outlet property="longTermButton" destination="0tC-Fi-5RV" id="owV-xa-z0a"/>
+                        <outlet property="nextButton" destination="dMg-IT-8c3" id="JCC-Aa-r1t"/>
+                        <outlet property="shortTermButton" destination="cSk-g6-3HL" id="Agl-BO-rnT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6KB-JQ-kcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xyi-MZ-Stw">
